@@ -4,13 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  let [isOpen, setIsOpen] = useState(false)
-  let [isClicked, setClick] = useState(0)
-  let [packages1, setPacks1] = useState([1, 2, 3, 4, 5, 6, 7])
-  let [packages2, setPacks2] = useState([1, 2, 3, 4, 5, 6, 7])
-  //change to key value pair later on
 
   //projects holder
+  // let project_1 = {title: '', imageSource: '.../src/images/'}
+  let project_1 = {title: 'DUMP', imageSource: "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png"}
+  let project_2 = {title: 'deadSpace', imageSource: '/src/images/deadspace.avif'}
+
+  let [isOpen, setIsOpen] = useState(false)
+  let [isClicked, setClick] = useState(0)
+  let [projectsPackage, setPacks1] = useState([project_1, project_2, project_1, project_1, project_1])
+  let [imagesPackage, setPacks2] = useState([project_1, project_1, project_1, project_1, project_1, project_1, project_1])
+  //change to key value pair later on
 
   return (
     <>
@@ -56,8 +60,8 @@ function App() {
           </div>
           <div className='displayer'>
             {
-              isClicked == 0 ? <Boxholder packages = { packages1 }/> : null ||
-              isClicked == 1 ? <Boxholder packages = { packages2 }/> : null ||
+              isClicked == 0 ? <Boxholder packages = { projectsPackage }/> : null ||
+              isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
               isClicked == 2 ? <InfoModal></InfoModal> : null
             }
           </div>
@@ -73,7 +77,7 @@ function Boxholder(props){
       {
       props.packages.map(function(arrIndex, i){
         return(
-          <Box name = {arrIndex} i = { i }/>
+          <Box arrIndex = {arrIndex} key = { i }/>
         )
       })
       }
@@ -83,8 +87,8 @@ function Boxholder(props){
 
 function Box(props){
   return (
-    <div className='box' key = {props.i}>
-      <img src=''>
+    <div className='box'>
+      <img src={props.arrIndex.imageSource} className='box'>
       </img>
     </div>
   )
