@@ -12,7 +12,7 @@ function App() {
 
   let [isOpen, setIsOpen] = useState(false)
   let [isClicked, setClick] = useState(0)
-  let [projectsPackage, setPacks1] = useState([project_1, project_2, project_1, project_1, project_1])
+  let [projectsPackage, setPacks1] = useState([project_2, project_2, project_2, project_1, project_1])
   let [imagesPackage, setPacks2] = useState([project_1, project_1, project_1, project_1, project_1, project_1, project_1])
   //change to key value pair later on
 
@@ -87,10 +87,8 @@ function Boxholder(props){
 
 function Box(props){
   return (
-    <div className='box'>
-      <img src={props.arrIndex.imageSource} className='box'>
-      </img>
-    </div>
+    <img src={props.arrIndex.imageSource} className='box'>
+    </img>
   )
 }
 

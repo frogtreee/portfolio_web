@@ -93,26 +93,22 @@
   overflow-y: auto;  
 }
 .boxholder{
-  display: flex;
-  justify-content: center;
-  align-content: start;
+  column-count: 2;
+  column-gap: 10px;
+  width: 65vw;
   height: 100%;
-  width: 75vw;
-  gap: 5vh;
-  flex-wrap: wrap;
   margin-top: 5vh;
   margin-left: 5vw;
 }
 .box{
   width: 30vw;
-  display: flex;
-  justify-items: center;
-  align-items: start;
+  display: inline-block;
   overflow: hidden;   
-}
-.box img{
+  height: auto;
   border: 4px solid black;
   border-radius: 25px;
+  margin-bottom: 2vw;
+
 }
 .infoModal{
   display: flex;
