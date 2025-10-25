@@ -109,6 +109,7 @@
   border-radius: 25px;
   margin-bottom: 2vw;
   break-inside: avoid;
+  cursor: pointer;
 
 }
 .infoModal{
@@ -148,6 +149,18 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   overflow-y: scroll;
   scrollbar-width: none;
+}
+.preview_close_btn{
+  cursor: pointer;
+  background-color: white;
+  border-style: none;
+}
+.preview_more_btn{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 10%;
 }
 .popup img{
   width: 60%;

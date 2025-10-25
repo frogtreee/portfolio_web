@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { IoClose } from "react-icons/io5";
 
 function App() {
 
@@ -106,13 +107,15 @@ function Preview(props){
     <div className="popup" onClick={(e) => e.stopPropagation()}>
       <div className='preview_Header'>
         <h1>{ props.packages[props.selectedArr].title }</h1>
-        <button onClick={() => {props.setisPreviewOpen(false)}}>Close</button>
+        <button className = 'preview_close_btn'onClick={() => {props.setisPreviewOpen(false)}}>
+          <IoClose size={24} />
+        </button>
       </div>
       <div className='preview_imageAnddetails'>
         <img src = { props.packages[props.selectedArr].imageSource }>
         </img>
         <div className='preview_details'>
-          <button>
+          <button className='preview_more_btn'>
             More
           </button>
           <h4>
