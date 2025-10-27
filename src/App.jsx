@@ -57,13 +57,13 @@ function App() {
       <div className={`main ${isOpen ? "open" : ""}`}>
         <div className='secondMain'>
           <div className='menu'>
-            <button className={`buttons ${isClicked == 0 ? "clicked" : ""}`} onClick={() => {setClick(0)}}>
+            <button className={`menu_buttons ${isClicked == 0 ? "clicked" : ""}`} onClick={() => {setClick(0)}}>
               projects
             </button>
-            <button className={`buttons ${isClicked  == 1 ? "clicked" : ""}`} onClick={() => {setClick(1)}}>
+            <button className={`menu_buttons ${isClicked  == 1 ? "clicked" : ""}`} onClick={() => {setClick(1)}}>
               life
             </button>
-            <button className={`buttons ${isClicked  == 2 ? "clicked" : ""}`} onClick={() => {setClick(2)}}>
+            <button className={`menu_buttons ${isClicked  == 2 ? "clicked" : ""}`} onClick={() => {setClick(2)}}>
               contact
             </button>
           </div>
@@ -115,7 +115,8 @@ function Preview(props){
         <img src = { props.packages[props.selectedArr].imageSource }>
         </img>
         <div className='preview_details'>
-          <button className='preview_more_btn'>
+          {/* link a url */}
+          <button className='preview_more_btn' onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}>
             More
           </button>
           <h4>

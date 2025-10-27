@@ -62,7 +62,7 @@
   gap: 4vh;
 }
 
-.buttons{
+.menu_buttons{
   border-radius: 25px;
   background-color: white;
   width: 5vw;
@@ -75,7 +75,7 @@
 
 }
 
-.buttons.clicked {
+.menu_buttons.clicked {
   color: white;
   background-color: black;
   border-style: inset;
@@ -137,10 +137,10 @@
 
 /* the popup box */
 .popup {
-  width: 70%;
-  height: auto;
-  min-height: 50%;
-  max-height: 70%;
+  width: auto;
+  height: 60%;
+  min-width: 50%;
+  max-width: 70%;
   background: white;
   color: black;
   padding: 2rem;
@@ -163,8 +163,8 @@
   height: 10%;
 }
 .popup img{
-  width: 60%;
-  height: auto;
+  height: 20vw;
+  width: auto;
   border: 4px solid black;
   border-radius: 25px;
   margin-bottom: 2vw;
@@ -178,16 +178,17 @@
 .preview_imageAnddetails{
   display: flex;
   justify-content: space-between;
+  gap: 10%;
   /* flex-direction: row; */
   /* gap: 20%; */
 }
 
 .preview_details{
-  width: 20%;
+  width: 20vw;
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin-right: 8%;
+  margin-right: 5%;
   gap: 20%;
   justify-content: center;
 }
