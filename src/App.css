@@ -134,6 +134,9 @@
   align-items: center;
   z-index: 1000; 
 }
+.overlay {
+  animation: fadeIn 0.3s ease;
+}
 
 /* the popup box */
 .popup {
@@ -193,8 +196,46 @@
   justify-content: center;
 }
 
-.overlay {
-  animation: fadeIn 0.3s ease;
+.overlay_detailedView{
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+.detailedView{
+  overflow-y: scroll;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  scrollbar-width: none;
+  align-items: center;
+  margin-top: 5vh;
+}
+.detailedView img{
+  height: 80%;
+  width: auto;
+  border-style: solid;
+}
+.detailedView_Header{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 80vw;
+}
+.detailedView_details{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 20vw;
 }
 
 @keyframes fadeIn {

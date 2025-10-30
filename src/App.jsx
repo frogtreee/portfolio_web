@@ -18,11 +18,17 @@ function App() {
   //change to key value pair later on
 
   let [isPreviewOpen, setisPreviewOpen] = useState(false);
+  let [isDetailedViewOpen, setisDetailedViewOpen] = useState(false);
   let [selectedArr, setSelectedArr] = useState(0);
 
   function openPreview(i){
     setisPreviewOpen(true);
     setSelectedArr(i);
+  }
+
+  function openDetailedView(){
+    setisDetailedViewOpen(true);
+    setisPreviewOpen(false);
   }
 
   return (
@@ -69,12 +75,9 @@ function App() {
           </div>
           <div className='displayer'>
             {
-              isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen }/> : null ||
+              isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen } isDetailedViewOpen = { isDetailedViewOpen } setisDetailedViewOpen = {setisDetailedViewOpen} openDetailedView = { openDetailedView }/> : null ||
               isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
               isClicked == 2 ? <InfoModal></InfoModal> : null
-            }
-            {
-              isPreviewOpen == true ? <></> : null
             }
           </div>
         </div>
@@ -95,7 +98,10 @@ function Boxholder(props){
       })
       }
       {
-        props.isPreviewOpen && (<Preview packages = { props.packages } setisPreviewOpen = { props.setisPreviewOpen } selectedArr = { props.selectedArr }></Preview>)
+        props.isPreviewOpen && (<Preview packages = { props.packages } setisDetailedViewOpen = { props.setisDetailedViewOpen } setisPreviewOpen = { props.setisPreviewOpen } selectedArr = { props.selectedArr } openDetailedView = {props.openDetailedView}></Preview>)
+      }
+      {
+        props.isDetailedViewOpen && (<DetailedView packages = { props.packages } setisDetailedViewOpen = { props.setisDetailedViewOpen } setisPreviewOpen = { props.setisPreviewOpen } selectedArr = { props.selectedArr }/>)
       }
     </div>
   )
@@ -107,7 +113,7 @@ function Preview(props){
     <div className="popup" onClick={(e) => e.stopPropagation()}>
       <div className='preview_Header'>
         <h1>{ props.packages[props.selectedArr].title }</h1>
-        <button className = 'preview_close_btn'onClick={() => {props.setisPreviewOpen(false)}}>
+        <button className = 'preview_close_btn' onClick={() => {props.setisPreviewOpen(false)}}>
           <IoClose size={24} />
         </button>
       </div>
@@ -116,7 +122,7 @@ function Preview(props){
         </img>
         <div className='preview_details'>
           {/* link a url */}
-          <button className='preview_more_btn' onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}>
+          <button className='preview_more_btn' onClick={() => {props.openDetailedView()}}>
             More
           </button>
           <h4>
@@ -134,6 +140,48 @@ function Preview(props){
       <p>
         {props.packages[props.selectedArr].details}
       </p>
+    </div>
+  </div>
+  )
+}
+function DetailedView(props){
+  return(
+  <div className="overlay_detailedView">
+    <div className="detailedView">
+      <img src = {props.packages[props.selectedArr].imageSource}>
+      </img>
+      <div className='detailedView_Header'>
+        <h1>
+          {props.packages[props.selectedArr].title}
+        </h1>
+        <button onClick={() => {props.setisDetailedViewOpen(false)}}>
+          <IoClose size={24}/>
+        </button>
+      </div>
+      <div className='detailedView_details'>
+        <button>
+          Download
+        </button>
+        <p>
+          Duration
+        </p>
+        <p>
+          role
+        </p>
+      </div>
+      <h3>
+        About
+      </h3>
+      <div>
+        <p>
+
+        </p>
+        <div>
+          {
+            //image repeat
+          }
+        </div>
+      </div>
     </div>
   </div>
   )
