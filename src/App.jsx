@@ -4,18 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { IoClose } from "react-icons/io5";
 
+//import project files.
+import project1 from './projects/project1';
+import project2 from './projects/project2';
+
 function App() {
 
-  //projects holder
-  // let project_1 = {title: '', imageSource: '.../src/images/', role: '', duration: '', details: ''}
-  let project_1 = {title: 'DUMP', imageSource: "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png", role: 'developer', duration: '10/28/2025', details: 'dsjhfaksdjfhaskjdfhaskldjfhsakjldfhskajdlfhaskljdfhsadkjlfhsdakjlfhaskdjlfhsakjldfhkajlsdhfkjlsadhfkljsdafhkjlsadfhkjlsadfhklsjadfhsjkadlfhskajldfhsajkldfhsakldjhfsklajdfh'}
-  let project_2 = {title: 'deadSpace', imageSource: '/src/images/deadspace.avif', role: 'developer', duration: '10/28/2025', details: 'dsjhfaksdjfhaskjdfhaskldjfhsakjldfhskajdlfhaskljdfhsadkjlfhsdakjlfhaskdjlfhsakjldfhkajlsdhfkjlsadhfkljsdafhkjlsadfhkjlsadfhklsjadfhsjkadlfhskajldfhsajkldfhsakldjhfsklajdfh'}
+  // let project_1 = {title: '', imageSource: '.../src/images/', role: '', duration: '', short_description: ''}
 
   let [isOpen, setIsOpen] = useState(false)
   let [isClicked, setClick] = useState(0)
-  let [projectsPackage, setPacks1] = useState([project_2, project_2, project_2, project_1, project_1])
-  let [imagesPackage, setPacks2] = useState([project_1, project_1, project_1, project_1, project_1, project_1, project_1])
-  //change to key value pair later on
+  let [projectsPackage, setPacks1] = useState([project1, project2, project2, project2, project1])
+  let [imagesPackage, setPacks2] = useState([project1, project1, project1, project1, project1, project1, project1])
 
   let [isPreviewOpen, setisPreviewOpen] = useState(false);
   let [isDetailedViewOpen, setisDetailedViewOpen] = useState(false);
@@ -138,7 +138,7 @@ function Preview(props){
         About
       </h4>
       <p>
-        {props.packages[props.selectedArr].details}
+        {props.packages[props.selectedArr].short_description}
       </p>
     </div>
   </div>
@@ -148,25 +148,27 @@ function DetailedView(props){
   return(
   <div className="overlay_detailedView">
     <div className="detailedView">
-      <img src = {props.packages[props.selectedArr].imageSource}>
+      <img className='detailedView_main_img' src = {props.packages[props.selectedArr].imageSource}>
       </img>
       <div className='detailedView_Header'>
         <h1>
           {props.packages[props.selectedArr].title}
         </h1>
-        <button onClick={() => {props.setisDetailedViewOpen(false)}}>
-          <IoClose size={24}/>
+        <button className='detailedView_close_btn' onClick={() => {props.setisDetailedViewOpen(false)}}>
+          <IoClose size={30}/>
         </button>
       </div>
       <div className='detailedView_details'>
-        <button>
+        <button className='detailedView_more_btn'>
           Download
         </button>
         <p>
-          Duration
+          Duration <br/>
+          {props.packages[props.selectedArr].duration}
         </p>
         <p>
-          role
+          role <br/>
+          {props.packages[props.selectedArr].role}
         </p>
       </div>
       <h3>
