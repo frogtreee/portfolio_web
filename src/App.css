@@ -1,4 +1,5 @@
-.App {
+
+.landing_page {
   background-color: black;
   display: flex;
   flex-direction: column; 
@@ -11,7 +12,7 @@
   align-items: center;
 }
 
-.about_low{
+.landing_page_aboutSection{
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
@@ -21,7 +22,7 @@
 
 }
 
-.centered{
+.landing_page_header{
   flex: 1;                  
   display: flex;
   justify-content: center;  

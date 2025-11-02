@@ -34,51 +34,53 @@ function App() {
   return (
     <>
       <div className='App'>
-        <div className='centered'>
-          <h1 id = 'click' onClick={() => {setIsOpen(true)}}>
-            Portfolio of Theo Jung
-          </h1>
+        <div className='landing_page'>
+          <div className='landing_page_header'>
+            <h1 id = 'click' onClick={() => {setIsOpen(true)}}>
+              Portfolio of Theo Jung
+            </h1>
+          </div>
+          <div className='landing_page_aboutSection'>
+            <div className='landing_page_about'>
+              <h4>
+                About
+              </h4>
+              <p>
+                Theo is a passionate game designer and developer. <br/>
+                Attending at Northeastern University.
+              </p>
+            </div>
+            <div className='landing_page_about'>
+              <h4>
+                Contact
+              </h4>
+              <p>
+                frogtreee@gmail.com<br/>
+                @theo_jung0_0
+              </p>
+            </div>
+          </div>
         </div>
-        <div className='about_low'>
-          <div className='about'>
-            <h4>
-              About
-            </h4>
-            <p>
-              Theo is a passionate game designer and developer. <br/>
-              Attending at Northeastern University.
-            </p>
-          </div>
-          <div className='about'>
-            <h4>
-              Contact
-            </h4>
-            <p>
-              frogtreee@gmail.com<br/>
-              @theo_jung0_0
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className={`main ${isOpen ? "open" : ""}`}>
-        <div className='secondMain'>
-          <div className='menu'>
-            <button className={`menu_buttons ${isClicked == 0 ? "clicked" : ""}`} onClick={() => {setClick(0)}}>
-              projects
-            </button>
-            <button className={`menu_buttons ${isClicked  == 1 ? "clicked" : ""}`} onClick={() => {setClick(1)}}>
-              life
-            </button>
-            <button className={`menu_buttons ${isClicked  == 2 ? "clicked" : ""}`} onClick={() => {setClick(2)}}>
-              contact
-            </button>
-          </div>
-          <div className='displayer'>
-            {
-              isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen } isDetailedViewOpen = { isDetailedViewOpen } setisDetailedViewOpen = {setisDetailedViewOpen} openDetailedView = { openDetailedView }/> : null ||
-              isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
-              isClicked == 2 ? <InfoModal></InfoModal> : null
-            }
+        <div className={`main ${isOpen ? "open" : ""}`}>
+          <div className='secondMain'>
+            <div className='menu'>
+              <button className={`menu_buttons ${isClicked == 0 ? "clicked" : ""}`} onClick={() => {setClick(0)}}>
+                projects
+              </button>
+              <button className={`menu_buttons ${isClicked  == 1 ? "clicked" : ""}`} onClick={() => {setClick(1)}}>
+                life
+              </button>
+              <button className={`menu_buttons ${isClicked  == 2 ? "clicked" : ""}`} onClick={() => {setClick(2)}}>
+                contact
+              </button>
+            </div>
+            <div className='displayer'>
+              {
+                isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen } isDetailedViewOpen = { isDetailedViewOpen } setisDetailedViewOpen = {setisDetailedViewOpen} openDetailedView = { openDetailedView }/> : null ||
+                isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
+                isClicked == 2 ? <InfoModal></InfoModal> : null
+              }
+            </div>
           </div>
         </div>
       </div>
