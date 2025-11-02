@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRef, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -21,6 +22,8 @@ function App() {
   let [isDetailedViewOpen, setisDetailedViewOpen] = useState(false);
   let [selectedArr, setSelectedArr] = useState(0);
 
+  const displayerRef = useRef(null);
+
   function openPreview(i){
     setisPreviewOpen(true);
     setSelectedArr(i);
@@ -30,6 +33,12 @@ function App() {
     setisDetailedViewOpen(true);
     setisPreviewOpen(false);
   }
+  
+  useEffect(() => {
+  if (displayerRef.current) {
+    displayerRef.current.scrollTop = 0;
+  }
+  }, [isClicked]);
 
   return (
     <>
@@ -74,7 +83,7 @@ function App() {
                 contact
               </button>
             </div>
-            <div className='displayer'>
+            <div className='displayer' ref={displayerRef}>
               {
                 isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen } isDetailedViewOpen = { isDetailedViewOpen } setisDetailedViewOpen = {setisDetailedViewOpen} openDetailedView = { openDetailedView }/> : null ||
                 isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
@@ -128,7 +137,7 @@ function Preview(props){
             More
           </button>
           <h4>
-            duration: <br></br>
+            Date: <br></br>
             {props.packages[props.selectedArr].duration}
           </h4>
           <h4>
@@ -178,7 +187,7 @@ function DetailedView(props){
             Download
           </a>
           <p>
-            Duration <br/>
+            Date <br/>
             {props.packages[props.selectedArr].duration}
           </p>
           <p>
@@ -191,6 +200,9 @@ function DetailedView(props){
         About
       </h3>
       <div>
+        {
+
+        }
         <p>
 
         </p>
