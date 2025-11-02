@@ -4,7 +4,8 @@ let project1 = {
     imageSource: "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png", 
     role: 'developer', 
     duration: '10/28/2025', 
-    short_description: 'dsjhfaksdjfhaskjdfhaskldjfhsakjldfhskajdlfhaskljdfhsadkjlfhsdakjlfhaskdjlfhsakjldfhkajlsdhfkjlsadhfkljsdafhkjlsadfhkjlsadfhklsjadfhsjkadlfhskajldfhsajkldfhsakldjhfsklajdfh'
+    short_description: 'dsjhfaksdjfhaskjdfhaskldjfhsakjldfhskajdlfhaskljdfhsadkjlfhsdakjlfhaskdjlfhsakjldfhkajlsdhfkjlsadhfkljsdafhkjlsadfhkjlsadfhklsjadfhsjkadlfhskajldfhsajkldfhsakldjhfsklajdfh',
+    download_path: 'public/project_files/halloween.jpg',
 }
 
 export default project1

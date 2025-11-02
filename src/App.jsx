@@ -134,42 +134,56 @@ function Preview(props){
           </h4>
         </div>
       </div>
-      <h4>
-        About
-      </h4>
-      <p>
-        {props.packages[props.selectedArr].short_description}
-      </p>
+      <div className='preview_about'>
+        <h4>
+          About
+        </h4>
+        <p>
+          {props.packages[props.selectedArr].short_description}
+        </p>
+      </div>
     </div>
   </div>
   )
 }
+
 function DetailedView(props){
   return(
   <div className="overlay_detailedView">
     <div className="detailedView">
-      <img className='detailedView_main_img' src = {props.packages[props.selectedArr].imageSource}>
-      </img>
       <div className='detailedView_Header'>
-        <h1>
-          {props.packages[props.selectedArr].title}
-        </h1>
+        <div className='detailedView_Names'>
+          <h1 onClick={() => {props.setisDetailedViewOpen(false)}}>
+            Theo Jung:    
+          </h1>
+          <h1>
+            {props.packages[props.selectedArr].title}
+          </h1>
+        </div>
         <button className='detailedView_close_btn' onClick={() => {props.setisDetailedViewOpen(false)}}>
-          <IoClose size={30}/>
+            <IoClose size={45}/>
         </button>
       </div>
-      <div className='detailedView_details'>
-        <button className='detailedView_more_btn'>
-          Download
-        </button>
-        <p>
-          Duration <br/>
-          {props.packages[props.selectedArr].duration}
-        </p>
-        <p>
-          role <br/>
-          {props.packages[props.selectedArr].role}
-        </p>
+
+      <div className='detailedView_imgAndDetails'>
+        <div className='detailedView_imgHolder'>
+          <img className='detailedView_main_img' src = {props.packages[props.selectedArr].imageSource}>
+          </img>
+        </div>
+
+        <div className='detailedView_details'>
+          <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download>
+            Download
+          </a>
+          <p>
+            Duration <br/>
+            {props.packages[props.selectedArr].duration}
+          </p>
+          <p>
+            role <br/>
+            {props.packages[props.selectedArr].role}
+          </p>
+        </div>
       </div>
       <h3>
         About
