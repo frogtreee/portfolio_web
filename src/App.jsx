@@ -16,7 +16,7 @@ function App() {
   let [isOpen, setIsOpen] = useState(false)
   let [isClicked, setClick] = useState(0)
   let [projectsPackage, setPacks1] = useState([project1, project2, project2, project2, project1])
-  let [imagesPackage, setPacks2] = useState([project1, project1, project1, project1, project1, project1, project1])
+  let [imagesPackage , setPacks2] = useState([project1, project1, project1, project1, project1, project1, project1])
 
   let [isPreviewOpen, setisPreviewOpen] = useState(false);
   let [isDetailedViewOpen, setisDetailedViewOpen] = useState(false);
@@ -86,7 +86,7 @@ function App() {
             <div className='displayer' ref={displayerRef}>
               {
                 isClicked == 0 ? <Boxholder packages = { projectsPackage } openPreview = {openPreview} selectedArr = { selectedArr } isPreviewOpen = { isPreviewOpen } setisPreviewOpen = { setisPreviewOpen } isDetailedViewOpen = { isDetailedViewOpen } setisDetailedViewOpen = {setisDetailedViewOpen} openDetailedView = { openDetailedView }/> : null ||
-                isClicked == 1 ? <Boxholder packages = { imagesPackage }/> : null ||
+                isClicked == 1 ? <Boxholder_img packages = { imagesPackage }/> : null ||
                 isClicked == 2 ? <InfoModal></InfoModal> : null
               }
             </div>
@@ -118,6 +118,22 @@ function Boxholder(props){
     </div>
   )
 }
+
+function Boxholder_img(props){
+  return(
+    <div className='boxholder'>
+      {
+      props.packages.map(function(arrIndex, i){
+        return(
+          <img src={arrIndex.imageSource} className='box_img' key = { i }>
+          </img>
+        )
+      })
+      }
+    </div>
+  )
+}
+
 
 function Preview(props){
   return(
@@ -200,25 +216,18 @@ function DetailedView(props){
       <h3>
         About
       </h3>
-      <div>
+      <div className='detailedView_about'>
         {
           props.packages[props.selectedArr].explanations.map(function(arrIndex, i){
             return(
               <>
-                <div className='detailedView_about_explanations'>
-                  {arrIndex}
-                </div>
-              </>
-            )
-          })
-        }
-        {
-          props.packages[props.selectedArr].about_pictures.map(function(arrIndex, i){
-            return(
-              <>
-                <div className='detailedView_about_pictures'>
-                  <img src={arrIndex}>
-                  </img>
+                <div className='detailedView_about_element' key={i}>
+                  {
+                    arrIndex[0] != null ? <p>{arrIndex[0]}</p> : null
+                  }
+                  {
+                    arrIndex[1] != null ? <img src = {arrIndex[1]}></img> : null
+                  }
                 </div>
               </>
             )
