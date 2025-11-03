@@ -200,9 +200,9 @@ function DetailedView(props){
         </div>
 
         <div className='detailedView_details'>
-          <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download>
-            Download
-          </a>
+          {
+            props.packages[props.selectedArr].downloadable == true ?           <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download> Download </a> : <div className='detailedView_download_btn'>No files to download</div>
+          }
           <p>
             Date <br/>
             {props.packages[props.selectedArr].duration}
