@@ -108,6 +108,7 @@ function Boxholder(props){
         )
       })
       }
+      
       {
         props.isPreviewOpen && (<Preview packages = { props.packages } setisDetailedViewOpen = { props.setisDetailedViewOpen } setisPreviewOpen = { props.setisPreviewOpen } selectedArr = { props.selectedArr } openDetailedView = {props.openDetailedView}></Preview>)
       }
@@ -201,16 +202,28 @@ function DetailedView(props){
       </h3>
       <div>
         {
-
+          props.packages[props.selectedArr].explanations.map(function(arrIndex, i){
+            return(
+              <>
+                <div className='detailedView_about_explanations'>
+                  {arrIndex}
+                </div>
+              </>
+            )
+          })
         }
-        <p>
-
-        </p>
-        <div>
-          {
-            //image repeat
-          }
-        </div>
+        {
+          props.packages[props.selectedArr].about_pictures.map(function(arrIndex, i){
+            return(
+              <>
+                <div className='detailedView_about_pictures'>
+                  <img src={arrIndex}>
+                  </img>
+                </div>
+              </>
+            )
+          })
+        }
       </div>
     </div>
   </div>
