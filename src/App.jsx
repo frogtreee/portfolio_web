@@ -155,7 +155,7 @@ function Preview(props){
           </button>
           <h4>
             Date: <br></br>
-            {props.packages[props.selectedArr].duration}
+            {props.packages[props.selectedArr].date}
           </h4>
           <h4>
             role: {props.packages[props.selectedArr].role}
@@ -201,11 +201,11 @@ function DetailedView(props){
 
         <div className='detailedView_details'>
           {
-            props.packages[props.selectedArr].downloadable == true ?           <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download> Download </a> : <div className='detailedView_download_btn'>No files to download</div>
+            props.packages[props.selectedArr].downloadable == true ? <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download> Download </a> : <div className='detailedView_download_btn'>No files to download</div>
           }
           <p>
             Date <br/>
-            {props.packages[props.selectedArr].duration}
+            {props.packages[props.selectedArr].date}
           </p>
           <p>
             role <br/>

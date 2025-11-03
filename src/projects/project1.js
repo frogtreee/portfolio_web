@@ -3,9 +3,9 @@ let project1 = {
     title: 'DUMP', 
     imageSource: "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png", 
     role: 'developer', 
-    duration: '10/28/2025', 
+    date: '10/28/2025', 
     short_description: 'dsjhfaksdjfhaskjdfhaskldjfhsakjldfhskajdlfhaskljdfhsadkjlfhsdakjlfhaskdjlfhsakjldfhkajlsdhfkjlsadhfkljsdafhkjlsadfhkjlsadfhklsjadfhsjkadlfhskajldfhsajkldfhsakldjhfsklajdfh',
-    downloadable: 'true',
+    downloadable: true,
     download_path: 'public/project_files/halloween.jpg',
     explanations: [['dfasdfasdfasdfasd', "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png"], ['adsfasdfadsfasdfsdafsadfasdfasdfasdfasdfasdf', "/src/images/ChatGPT Image Sep 22, 2025, 01_24_39 AM.png"]],
 }
