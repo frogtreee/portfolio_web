@@ -6,17 +6,33 @@ import './App.css'
 import { IoClose } from "react-icons/io5";
 
 //import project files.
-import project1 from './projects/project1';
-import project2 from './projects/project2';
+import UntilIReachTheEnd from './projects/UntilIReachTheEnd';
 
 function App() {
 
   // let project_1 = {title: '', imageSource: '.../src/images/', role: '', duration: '', short_description: ''}
 
+  let theo_arduino = "/src/images/theo_arduino.jpg";
+  let theo_chinese = "/src/images/theo_chinese.jpg";
+  let theo_dogshelter = "/src/images/theo_dogshelter.jpg";
+  let theo_english_camp = "/src/images/theo_english_camp.jpg";
+  let theo_gamejam = "/src/images/theo_gamejam.jpg";
+  let theo_japan_photo = "/src/images/theo_japan_photo.jpg";
+  let theo_japan_skyline = "/src/images/theo_japan_skyline.jpg";
+  let theo_japan = "/src/images/theo_japan.jpg";
+  let theo_paris = "/src/images/theo_paris.jpg";
+  let theo_robotics_photo = "/src/images/theo_robotics_photo.jpg";
+  let theo_robotics = "/src/images/theo_robotics.jpg";
+  
+  
+  
+  
+  
+
   let [isOpen, setIsOpen] = useState(false)
   let [isClicked, setClick] = useState(0)
-  let [projectsPackage, setPacks1] = useState([project1, project2, project2, project2, project1])
-  let [imagesPackage , setPacks2] = useState([project1, project1, project1, project1, project1, project1, project1])
+  let [projectsPackage, setPacks1] = useState([UntilIReachTheEnd])
+  let [imagesPackage , setPacks2] = useState([theo_arduino, theo_chinese, theo_dogshelter, theo_english_camp, theo_gamejam, theo_japan, theo_paris, theo_japan_photo, theo_japan_skyline, theo_robotics_photo, theo_robotics])
 
   let [isPreviewOpen, setisPreviewOpen] = useState(false);
   let [isDetailedViewOpen, setisDetailedViewOpen] = useState(false);
@@ -121,11 +137,11 @@ function Boxholder(props){
 
 function Boxholder_img(props){
   return(
-    <div className='boxholder'>
+    <div className='Boxholder_img'>
       {
       props.packages.map(function(arrIndex, i){
         return(
-          <img src={arrIndex.imageSource} className='box_img' key = { i }>
+          <img src={arrIndex} className='box_img' key = { i }>
           </img>
         )
       })
