@@ -13,17 +13,17 @@ function App() {
 
   // let project_1 = {title: '', imageSource: '.../src/images/', role: '', duration: '', short_description: ''}
 
-  let theo_arduino = "/src/images/theo_arduino.jpg";
-  let theo_chinese = "/src/images/theo_chinese.jpg";
-  let theo_dogshelter = "/src/images/theo_dogshelter.jpg";
-  let theo_english_camp = "/src/images/theo_english_camp.jpg";
-  let theo_gamejam = "/src/images/theo_gamejam.jpg";
-  let theo_japan_photo = "/src/images/theo_japan_photo.jpg";
-  let theo_japan_skyline = "/src/images/theo_japan_skyline.jpg";
-  let theo_japan = "/src/images/theo_japan.jpg";
-  let theo_paris = "/src/images/theo_paris.jpg";
-  let theo_robotics_photo = "/src/images/theo_robotics_photo.jpg";
-  let theo_robotics = "/src/images/theo_robotics.jpg";
+  let theo_arduino = "/images/theo_arduino.jpg";
+  let theo_chinese = "/images/theo_chinese.jpg";
+  let theo_dogshelter = "/images/theo_dogshelter.jpg";
+  let theo_english_camp = "/images/theo_english_camp.jpg";
+  let theo_gamejam = "/images/theo_gamejam.jpg";
+  let theo_japan_photo = "/images/theo_japan_photo.jpg";
+  let theo_japan_skyline = "/images/theo_japan_skyline.jpg";
+  let theo_japan = "/images/theo_japan.jpg";
+  let theo_paris = "/images/theo_paris.jpg";
+  let theo_robotics_photo = "/images/theo_robotics_photo.jpg";
+  let theo_robotics = "/images/theo_robotics.jpg";
   
   
   
