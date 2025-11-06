@@ -7,6 +7,7 @@ import { IoClose } from "react-icons/io5";
 
 //import project files.
 import UntilIReachTheEnd from './projects/UntilIReachTheEnd';
+import theSpark from './projects/theSpark';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
 
   let [isOpen, setIsOpen] = useState(false)
   let [isClicked, setClick] = useState(0)
-  let [projectsPackage, setPacks1] = useState([UntilIReachTheEnd])
+  let [projectsPackage, setPacks1] = useState([UntilIReachTheEnd, theSpark])
   let [imagesPackage , setPacks2] = useState([theo_arduino, theo_chinese, theo_dogshelter, theo_english_camp, theo_gamejam, theo_japan, theo_paris, theo_japan_photo, theo_japan_skyline, theo_robotics_photo, theo_robotics])
 
   let [isPreviewOpen, setisPreviewOpen] = useState(false);
@@ -174,7 +175,8 @@ function Preview(props){
             {props.packages[props.selectedArr].date}
           </h4>
           <h4>
-            role: {props.packages[props.selectedArr].role}
+            role: <br/>
+            {props.packages[props.selectedArr].role}
           </h4>
         </div>
       </div>
@@ -217,7 +219,7 @@ function DetailedView(props){
 
         <div className='detailedView_details'>
           {
-            props.packages[props.selectedArr].downloadable == true ? <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download> Download </a> : <div className='detailedView_download_btn'>No files to download</div>
+            props.packages[props.selectedArr].download_path != null ? <a className='detailedView_download_btn' href={ props.packages[props.selectedArr].download_path } download> Download </a> : <div className='detailedView_download_btn'>No files to download</div>
           }
           <p>
             Date <br/>
@@ -249,6 +251,7 @@ function DetailedView(props){
             )
           })
         }
+        {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
       </div>
     </div>
   </div>
