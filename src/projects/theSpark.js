@@ -6,7 +6,7 @@ let theSpark = {
     date: 'Aug/2024~April/2025', 
     short_description: "This project foucses on the Jeju's 4.3 incident.",
     download_path: null,
-    explanations: ['This game that I made for a capstone project, captures a tragic incident that happend in Korea'],
+    explanations: [['This game that I made for a capstone project, captures a tragic incident that happend in Korea.', null]],
 }
 
 export default theSpark
