@@ -69,21 +69,8 @@ function App() {
           <div className='landing_page_aboutSection'>
             <div className='landing_page_about'>
               <h4>
-                About
+                Click The Title
               </h4>
-              <p>
-                Theo is a passionate game designer and developer. <br/>
-                Attending at Northeastern University.
-              </p>
-            </div>
-            <div className='landing_page_about'>
-              <h4>
-                Contact
-              </h4>
-              <p>
-                frogtreee@gmail.com<br/>
-                @theo_jung0_0
-              </p>
             </div>
           </div>
         </div>
@@ -170,14 +157,14 @@ function Preview(props){
           <button className='preview_more_btn' onClick={() => {props.openDetailedView()}}>
             More
           </button>
-          <h4>
+          <p>
             Date: <br></br>
             {props.packages[props.selectedArr].date}
-          </h4>
-          <h4>
+          </p>
+          <p>
             role: <br/>
             {props.packages[props.selectedArr].role}
-          </h4>
+          </p>
         </div>
       </div>
       <div className='preview_about'>
@@ -276,7 +263,7 @@ function InfoModal(){
           Contact
         </h4>
         <p>
-          frogtreee@gmail.com<br/>
+          theo.jung28@gmail.com<br/>
           @theo_jung0_0
         </p>
       </div>
